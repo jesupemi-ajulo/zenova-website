@@ -395,13 +395,12 @@ nav {
 }
 .host {
   min-height: 100vh;
-
   background: var(--green3);
+  padding: 5rem 2rem;
 }
 .host-container {
   width: 80%;
   margin: 0 auto;
-  padding: 5rem 2rem;
 }
 .host-heading {
   font-size: 3.5rem;
@@ -617,7 +616,6 @@ footer {
 .zenova-footer p:last-child {
   width: 40%;
   font-family: "DM Sans", sans-serif;
-  font-style: 0.3rem;
   color: #f8f6dd;
 }
 .navigate-footer ul {
@@ -677,7 +675,7 @@ footer {
   padding: 0.8rem;
   border-radius: 50%;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     position: relative;
     width: 100%;
@@ -879,15 +877,103 @@ footer {
   }
   .host-heading-paragraph {
     font-size: 3rem;
-    width: 80%;
+    width: 100%;
   }
   .host-cards {
     flex-direction: column;
+    /* background-color: pink; */
+    /* padding: 5rem 10rem; */
+    gap: 4rem;
   }
   .host-card {
     width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 5rem;
   }
   .host-img {
     width: fit-content;
+  }
+  .host-content h4 {
+    font-size: 4rem;
+  }
+  .host-content h6 {
+    font-size: 1rem;
+  }
+  .host-content p {
+    font-size: 1.5rem;
+  }
+  .tickets {
+    width: fit-content;
+    flex-direction: column;
+    margin: 0;
+    padding: 8rem;
+  }
+  .tickets-header {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .tickets-heading {
+    font-size: 6rem;
+  }
+  .tickets-heading-paragraph {
+    font-size: 2rem;
+  }
+  .ticket-cards {
+    flex-direction: column;
+  }
+  .ticket-price {
+    font-size: 5rem;
+  }
+  .ticket {
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+  }
+  .ticket-person {
+    font-size: 1.5rem;
+  }
+  .ticket-name {
+    font-size: 2rem;
+  }
+  .ticket-card ul li::before {
+    font-size: 1.4rem;
+  }
+  .ticket-card ul li {
+    font-size: 1.4rem;
+  }
+  .ticket-btn {
+    padding: 2rem;
+    font-size: 2rem;
+  }
+  footer {
+    width: 400vw;
+    padding: 5rem 2rem;
+  }
+  .first-footer{
+    flex-direction: column;
+  }
+  .zenova-footer p:last-child {
+    font-size: 2rem;
+  }
+  .navigate-footer ul li a {
+font-size: 1.5rem;
+}
+.navigate-footer p{
+  font-size: 2rem;
+}
+  .contact-footer ul li a {
+font-size: 1.5rem;
+}
+.contact-footer p{
+  font-size: 2rem;
+}
+.second-footer p {
+font-size: 1.8rem;
+}
+  body{
+    width: 400vw;
   }
 }
