@@ -21,10 +21,10 @@
       <p class="nav-logo">ZENOVA</p>
       <div class="nav-links">
         <ul>
-          <li><a href="#host">About</a></li>
-          <li><a href="#schedule">Schedule</a></li>
-          <li><a href="#host">Hosts</a></li>
-          <li><a href="#tickets"> Get Tickets</a></li>
+          <li><a href="#about" class="nav-links-a">About</a></li>
+          <li><a href="#schedule" class="nav-links-a">Schedule</a></li>
+          <li><a href="#host" class="nav-links-a">Hosts</a></li>
+          <li><a href="#tickets" class="nav-links-a"> Get Tickets</a></li>
         </ul>
       </div>
       <img
@@ -34,7 +34,13 @@
         height="20px"
         class="icon-menu"
       />
-      <img src="./close.png" alt="" width="20px" style="display: none" />
+      <img
+        src="./close.png"
+        alt=""
+        width="20px"
+        style="display: none"
+        class="icon-close"
+      />
     </nav>
     <section class="header">
       <div class="left-header">
@@ -140,18 +146,22 @@
         </div>
       </div>
     </section>
-    <section class="schedule">
+    <section class="schedule" id="schedule">
       <div class="schedule-upper">
         <div>
           <p class="tag">PROGRAM</p>
           <p class="schedule-heading">Your <span>weekend</span> at a glance.</p>
         </div>
         <div class="schedule-btns">
-          <button class="button main-button">Day 1 · Sat</button>
-          <button class="button secondary-button">Day 2 · Sun</button>
+          <button class="button main-button" id="saturday-btn">
+            Day 1 · Sat
+          </button>
+          <button class="button secondary-button" id="sunday-btn">
+            Day 2 · Sun
+          </button>
         </div>
       </div>
-      <div class="schedule-cards saturday">
+      <div class="schedule-cards saturday" id="schedule-card-saturday">
         <div class="schedule-card">
           <div class="schedule-time">8:00 AM</div>
           <div class="schedule-content">
@@ -219,7 +229,7 @@
           </div>
         </div>
       </div>
-      <div class="schedule-cards sunday">
+      <div class="schedule-cards sunday" id="schedule-card-sunday">
         <div class="schedule-card">
           <div class="schedule-time">7:30 AM</div>
           <div class="schedule-content">
@@ -414,7 +424,8 @@
             <li><a href="">Refund Policy</a></li>
           </ul>
         </div>
-      </div><hr>
+      </div>
+      <hr />
       <div class="second-footer">
         <p>© 2026 Zenova Retreat. All rights reserved.</p>
         <div>

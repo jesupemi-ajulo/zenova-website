@@ -329,6 +329,11 @@ nav {
   flex-direction: column;
   gap: 2rem;
 }
+#schedule-cards-saturday{
+    display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .sunday {
   display: none;
 }
@@ -674,6 +679,9 @@ footer {
   border: 1px solid var(--green3);
   padding: 0.8rem;
   border-radius: 50%;
+  .icon-close {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   body {
@@ -694,7 +702,7 @@ footer {
     transform: translateX(-150%);
     transition: all 0.4s ease-out;
     border-radius: 5px;
-    display: none;
+    /* display: none; */
   }
   .nav-links ul {
     justify-content: space-between;
@@ -709,6 +717,10 @@ footer {
 
   .icon-menu {
     display: block;
+    width: 90px;
+    height: 90px;
+  }
+  .icon-close {
     width: 90px;
     height: 90px;
   }
@@ -845,6 +857,7 @@ footer {
   .schedule-heading {
     font-size: 8rem;
   }
+  
   .schedule-card {
     gap: 20rem;
   }
@@ -952,28 +965,28 @@ footer {
     width: 400vw;
     padding: 5rem 2rem;
   }
-  .first-footer{
+  .first-footer {
     flex-direction: column;
   }
   .zenova-footer p:last-child {
     font-size: 2rem;
   }
   .navigate-footer ul li a {
-font-size: 1.5rem;
-}
-.navigate-footer p{
-  font-size: 2rem;
-}
+    font-size: 1.5rem;
+  }
+  .navigate-footer p {
+    font-size: 2rem;
+  }
   .contact-footer ul li a {
-font-size: 1.5rem;
-}
-.contact-footer p{
-  font-size: 2rem;
-}
-.second-footer p {
-font-size: 1.8rem;
-}
-  body{
+    font-size: 1.5rem;
+  }
+  .contact-footer p {
+    font-size: 2rem;
+  }
+  .second-footer p {
+    font-size: 1.8rem;
+  }
+  body {
     width: 400vw;
   }
 }
