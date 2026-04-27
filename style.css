@@ -162,34 +162,34 @@ nav {
 .line-1,
 .line-2 {
   overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  /* border-right: 2px solid #2d6a4f; */
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  filter: blur(2px);
 }
+
 .line-1 {
-  animation:
-    typing 1.5s steps(16) 0.3s forwards,
-    blink 0.6s step-end infinite;
+  animation: textReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
 }
+
 .line-2 {
-  animation:
-    typing 1.2s steps(13) 1.8s forwards,
-    blink 0.6s step-end 1.8s infinite;
+  animation: textReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
 }
-@keyframes typing {
-  from {
-    width: 0;
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8) rotateX(20deg);
+    filter: blur(3px);
   }
-  to {
-    width: 100%;
-  }
-}
-@keyframes blink {
   50% {
-    border-color: transparent;
+    opacity: 0.7;
+    transform: translateY(15px) scale(0.95) rotateX(5deg);
+    filter: blur(1px);
   }
   100% {
-    border: none;
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
   }
 }
 
@@ -198,25 +198,92 @@ nav {
   color: var(--green1);
   width: 60%;
   font-family: "DM Sans", sans-serif;
+  opacity: 0;
+  transform: translateY(30px) rotateX(15deg) scale(0.9);
+  filter: blur(2px);
+  animation: textSlideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.5s forwards;
 }
-.header-text,
-.header-btn,
+
+.header-btn {
+  animation: buttonBounce 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3.2s
+    forwards;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  /* filter: blur(1px); */
+}
+
 .header-card {
   opacity: 0;
-  filter: blur(5px);
-  transform: translateY(20px);
-  animation: blurFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 3s;
+  transform: translateY(40px) rotateY(20deg) scale(0.8);
+  filter: blur(3px);
+  animation: cardFlipIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
-.header-btn {
-  animation-delay: 4s;
-  transform: translateX(-40px);
+
+.header-card:nth-child(1) {
+  animation-delay: 3.5s;
 }
-@keyframes blurFadeIn {
-  to {
+
+.header-card:nth-child(2) {
+  animation-delay: 3.8s;
+}
+
+.header-card:nth-child(3) {
+  animation-delay: 4.1s;
+}
+
+@keyframes textSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateX(20deg) scale(0.85);
+    filter: blur(3px);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(15px) rotateX(5deg) scale(0.95);
+    filter: blur(1px);
+  }
+  100% {
     opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
     filter: blur(0px);
-    transform: translateY(0);
+  }
+}
+
+@keyframes buttonBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.7);
+    filter: blur(2px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(20px) scale(1.05);
+    filter: blur(0px);
+  }
+  70% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardFlipIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateY(30deg) scale(0.7);
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(20px) rotateY(10deg) scale(0.9);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateY(0deg) scale(1);
+    filter: blur(0px);
   }
 }
 .header-cards {
@@ -301,8 +368,6 @@ nav {
   width: 80%;
   margin: 0 auto;
   gap: 5rem;
-  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-timeline: view();
 }
 .left-about {
   display: flex;
@@ -316,8 +381,10 @@ nav {
   font-weight: 200;
   color: var(--green5);
   font-weight: 500;
-  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: hostHeaderSlide 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   animation-timeline: view();
+  animation-range: entry 15% entry 85%;
+  opacity: 0;
 }
 .about-text-container {
   display: flex;
@@ -332,15 +399,11 @@ nav {
   color: var(--green1);
   width: 75%;
   font-family: "DM Sans", sans-serif;
-  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-timeline: view();
 }
 .about-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-timeline: view();
 }
 .about-card {
   display: flex;
@@ -351,11 +414,27 @@ nav {
   border-radius: 10px;
   opacity: 0.7;
   transition: all 0.2s;
+  animation: hostCardRise 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-timeline: view();
+  animation-range: entry 10% entry 90%;
+  opacity: 0;
 }
 .about-card:hover {
   transform: translateY(-5px);
   opacity: 0.8;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+.about-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.about-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.about-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.about-card:nth-child(4) {
+  animation-delay: 0.8s;
 }
 .about-card-heading {
   font-family: "Cormorant Garamond", serif;
@@ -372,8 +451,6 @@ nav {
 }
 .right-about {
   position: relative;
-  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-timeline: view();
 }
 .right-about-card {
   background: white;
@@ -1365,7 +1442,7 @@ footer {
   }
   footer {
     /* width: 400vw; */
-    footer:100%;
+    footer: 100%;
     padding: 5rem 2rem;
   }
   .first-footer {
