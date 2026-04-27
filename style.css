@@ -843,7 +843,7 @@ nav {
   opacity: 0;
 }
 .host-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(2.5) !important;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.274);
   opacity: 1;
 }
@@ -950,7 +950,7 @@ nav {
 }
 .ticket-card:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.274);
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.02) !important;
 }
 .ticket-card:nth-child(1) {
   animation-delay: 0.2s;
